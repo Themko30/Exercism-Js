@@ -42,3 +42,13 @@ export function addSecretIngredient(friendsList, myList) {
   friendsList.push(secretIngredient);
   myList.push(secretIngredient);
 }
+
+export function scaleRecipe(recipe, scaleFactor) {
+  var clonedRecipe = { ...recipe };
+  for (let key in clonedRecipe) {
+    if (typeof clonedRecipe[key] == "number") {
+      clonedRecipe[key] *= scaleFactor / 2;
+    }
+  }
+  return clonedRecipe;
+}
